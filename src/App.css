@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+.app{
+  background-color: #fafafa;
+  width: 100%;
+}
+/*HEADER*/
+.header{
+  background-color: #fafafa;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid rgb(212, 198, 198);
+  height: 3rem;
+  box-sizing:initial;
+  position: fixed;
+}
+button {
+  margin-right: 2.5px;
+  margin-left: 2.5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px gray;
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+.header button {
+  background-color: #0095f6;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 0px 20px;
+  opacity: 0.8;
+  min-width: 75px;
+  height: 35px;
+  margin-right: 4rem;
+}
+.header button:hover{
+  opacity: 1.2;
+}
+#plusButton{
+  display: none;
+}
+.posts-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+}
+
+/*POSTS*/
+.post{
+  width:50rem;
+  background: white;
+  border: 1px solid lightgrey;
+  margin:1.5rem;
+  box-shadow: 0px 0px 3px #CBD4C2;
+  border-top:2px solid #007bff;
+  animation: fadeInAnimation ease 4s;
+}
+.post:hover{
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.post-header{
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+  border-bottom: 2px solid lightgrey;
+}
+.post-icon{
+  margin-right: 10px;
+  color: #2356b6;
+  font-size: 2rem;
+}
+.post-caption{
+  font-weight: normal;
+  padding: 10px 20px;
+}
+.post-caption i{
+  color: #999999;
+}
+.hashtags{
+  margin:20px;
+  color: #2356b6; 
+  font-size: 0.8rem;
+}
+.post-footer{
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid lightgrey;
+  padding-left: 10px;
+}
+.post-footer i{
+  margin: 5px;
+}
+.fa-heart:hover{
+color: red;
+}
+.fa-star:hover{
+  color: rgba(211, 211, 11, 0.815);
+}
+.fa-comment:hover{
+  color: #0095f6;
+}
+/*MODAL*/
+#modal {
+  z-index: 20;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 5px;
+  width: 550px;
+  top: 50px;
+  left: calc(50% - 250px);
+  position: absolute;
+  align-items: center;
+}
+#modalHeader{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgrey;
+}
+#modalBackDrop {
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0,0,0,0.8);
+}
+#saveButton{
+  background-color: #2356b6;
+  width: 75px;
+}
+#modal h2{
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.form,
+.form-items{
+  width: 100%;
+  margin-top: 1rem;
+}
+.form-items .input{
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 15px 40px;
+  box-sizing: border-box;
+  background: #ebeef1;
+  border: 0px;
+  outline: none;
+  border-radius: 30px;
+}
+.form-items .input.message{
+  height: 125px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  padding: 15px 15px;
+  resize: none;
+  position: relative;
+}
+.form-items .fas{
+  position: absolute;
+  left:35px;
+  margin-top:15px;
+  color: #9a99aa;
+}
+.error{
+  color: red;
+  font-weight: bold;
+}
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
+/*MEDIA QUERIES*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .post{
+    width:43rem;
+  } 
+  .header img{
+    width:150px;
+    height: 40px;
+  }
+  .header button{
+    width: 90px;
+    margin-right: 5rem;
+    padding: 10px 0px;
+  }
+  #modal {
+    width: 650px;
+    left: 5%;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .post{
+    width:24rem;
+    margin-right: 4.5rem;
+  }
+  .header{
+    height: 35px;
+  }
+  .header img{
+    width:120px;
+    height: 30px;
+  }
+  .header button{
+    width: 70px;
+    font-size: 12px;
+    margin-right: 7.5rem;
+    padding: 0px;
+  }
+  #modal {
+    width: 25rem;
+    left: calc(50% - 240px);
+  }
+}
+@media (min-width:300px) and (max-width: 480px) {
+  .post{
+    max-width:20rem;
+    min-width: 9rem;
+    left: 5rem;
+  }
+  .post-header{
+    padding: 0px 10px ;
+    height: 2.5rem;
+  }
+  .header{
+    height: 35px;
+    display: flex;
+    justify-content:left;
+  }
+  .header button {
+    display: none;
+  }
+  #plusButton{
+    display: inline;
+    color: #2356b6;
+    font-size: 25px;
+    opacity: 0.8;
+    margin-left: 10.5rem;
+    padding: 0px 10px;
+  }
+  #plusButton:hover{
+    opacity: 1;
+  }
+  .modal-container{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+  }
+  #modal{
+   width: 17.5rem;
+   max-width: 19rem;
+    left: 6%;
+  }
+  
+}
